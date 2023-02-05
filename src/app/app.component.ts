@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { FormGroup, FormArray, FormBuilder, Validators } from "@angular/forms";
+import { FormGroup, FormArray, FormBuilder, Validators, FormControl } from "@angular/forms";
 @Component({
   selector: "my-app",
   templateUrl: "./app.component.html",
@@ -19,9 +19,9 @@ export class AppComponent {
   }
 
   initRows() {
-    return this._fb.group({
-      name: [""],
-      sexo: ['']
+    return new FormGroup({
+      name: new FormControl(""),
+      sexo: new FormControl("")
     });
   }
 
