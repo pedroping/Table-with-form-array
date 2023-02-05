@@ -33,6 +33,7 @@ export class AppComponent {
     return new FormGroup({
       name: new FormControl('', Validators.required),
       sexo: new FormControl('', Validators.required),
+      idade: new FormControl(null as any, Validators.required)
     });
   }
 
