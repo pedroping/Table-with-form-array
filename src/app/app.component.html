@@ -1,5 +1,5 @@
 <form [formGroup]="invoiceForm">
-	<table border=1>
+	<table border=12>
 		<thead>
 			<th>Id</th>
 			<th>Name</th>
@@ -7,7 +7,8 @@
 			<th>Action</th>
 		</thead>
 		<tbody formArrayName="Rows">
-			<tr *ngFor="let itemrow of invoiceForm.controls.Rows.controls; let i=index;let l=last"
+			<tr *ngFor="let itemrow of invoiceForm.controls.Rows.controls; 
+				let i=index;let l=last"
 				[formGroupName]="i">
 				<td>{{i+1}}</td>
 				<td>
@@ -15,12 +16,13 @@
         </td>
 				<td>
 					<select type="text" formControlName="sexo" class="form-control">
+						<option value="">--</option>
 						<option value="M">Masculino</option>
 						<option value="F">Feminino</option>
 					</select>
 				</td>
 				<td>
-					<button (click)="deleteRow(i)" class="btn btn-danger">Delete</button>
+					<button *ngIf="formArr.controls[0].invalid" (click)="deleteRow(i)" class="btn btn-danger">Delete</button>
 				</td>
 			</tr>
 		</tbody>
