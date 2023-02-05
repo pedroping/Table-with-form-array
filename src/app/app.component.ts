@@ -9,8 +9,8 @@ export class AppComponent {
   public invoiceForm: FormGroup;
   constructor(private _fb: FormBuilder) {}
   ngOnInit() {
-    this.invoiceForm = this._fb.group({
-      Rows: this._fb.array([this.initRows()])
+    this.invoiceForm = new FormGroup({
+      Rows: new FormArray([this.initRows()])
     });
   }
 

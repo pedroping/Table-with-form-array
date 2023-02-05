@@ -14,7 +14,10 @@
 					<input formControlName="name" class="form-control">
         </td>
 				<td>
-					<input type="text" formControlName="sexo" class="form-control">
+					<select type="text" formControlName="sexo" class="form-control">
+						<option value="M">Masculino</option>
+						<option value="F">Feminino</option>
+					</select>
 				</td>
 				<td>
 					<button (click)="deleteRow(i)" class="btn btn-danger">Delete</button>
